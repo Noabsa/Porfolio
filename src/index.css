@@ -1,8 +1,61 @@
 @import './styles/color-scheme.css';
 @import './styles/nav-bar.css';
 @import './styles/cards-graphics.css';
-@import url('https://fonts.googleapis.com/css2?family=Albert+Sans&family=Patrick+Hand+SC&family=Amatic+SC&family=Montserrat+Alternates&family=Roboto&family=Urbanist:wght@300;400&display=swap');
+@import './styles/footer.css';
+@import './styles/social-bar.css';
 
+@import url('https://fonts.googleapis.com/css2?family=Albert+Sans&family=Neucha&family=Patrick+Hand+SC&family=Amatic+SC&family=Montserrat+Alternates&family=Roboto&family=Urbanist:wght@300;400&display=swap');
+
+:root {
+  --primary: #1e1c21;
+  --primary-50: hsla(264, 8%, 12%, 0.5);
+
+  --primary-dark: #0a090b;
+  --primary-dark-50: hsla(270, 10%, 4%, 0.5);
+  --primary-dark-30: hsla(270, 10%, 4%, 0.3);
+
+  --primary-light: #888585;
+  --primary-light-50: hsla(0, 1%, 53%, 0.5);
+  --primary-light-20: hsla(0, 1%, 53%, 0.2);
+
+  --secondary: #64a2a6;
+  --secondary-70: hsla(184, 27%, 52%, 0.7);
+  --secondary-50: hsla(184, 27%, 52%, 0.5);
+  --secondary-30: hsla(184, 27%, 52%, 0.3);
+  --secondary-20: hsla(184, 27%, 52%, 0.2);
+
+  --secondary-dark: hsl(190, 21%, 28%);
+  --secondary-dark-50: hsla(189, 21%, 32%, 0.5);
+  --secondary-dark-80: hsla(189, 21%, 32%, 0.8);
+
+  --secondary-light: #abc8c8;
+  --secondary-light-50: hsla(180, 21%, 73%, 0.5);
+  --secondary-light-40: hsla(180, 21%, 73%, 0.4);
+  --secondary-light-30: hsla(180, 21%, 73%, 0.3);
+
+  --accent: #c9b740;
+  --accent-70: hsla(52, 56%, 52%, 0.7);
+  --accent-50: hsla(52, 56%, 52%, 0.5);
+  --accent-20: hsla(52, 56%, 52%, 0.2);
+  --accent-30: hsla(52, 56%, 52%, 0.3);
+
+  --baseline: #f1ede9;
+  --baseline-70: hsla(30, 22%, 93%, 0.7);
+  --baseline-50: hsla(30, 22%, 93%, 0.5);
+  --baseline-20: hsla(30, 22%, 93%, 0.2);
+
+  --Albert: 'Albert Sans', sans-serif;
+  --Amatic: 'Amatic SC', cursive;
+  --Montserrat: 'Montserrat Alternates', sans-serif;
+  --Roboto: 'Roboto', sans-serif;
+  --Urbanist: 'Urbanist', sans-serif;
+  --Patrick: 'Patrick Hand SC', cursive;
+  --Neucha: 'Neucha', cursive;
+
+  --font-primary: var(--Urbanist);
+  --font-accent: var(--Montserrat);
+  --font-casual: var(--Neucha);
+}
 /*  GENERALS  */
 * {
   box-sizing: border-box;
@@ -10,47 +63,49 @@
   padding: 0;
 }
 body {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  width: 100%;
   background-color: var(--primary);
   overflow-x: hidden;
+}
+.wrapper {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.c-area {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 }
 *[class*='-page'] {
   display: flex;
   width: 100%;
-  height: 100vh;
-}
-
-/*  BACKGROUND LAYOUT  */
-.r-sec {
-  display: flex;
+  justify-content: space-between;
+  padding: 11rem 12rem 0rem 12rem;
   align-items: center;
-  height: 100%;
-  min-width: 78.5rem;
-  width: 78.5rem;
-  background-image: linear-gradient(90deg, var(--primary-dark-50) 99.5%, transparent);
 }
-.l-sec {
-  display: flex;
-  flex: 100%;
+.main-page {
+  height: calc(100vh - 9rem);
 }
 
 /*  CONTENT PARAGRAPH */
 .content-frame {
   display: flex;
   flex-direction: column;
-  width: 600px;
-  margin-top: 0rem;
-  margin-left: 14rem;
-  position: relative;
+  width: 47rem;
+  min-width: 47rem;
+  justify-content: space-between;
+  margin-right: 3rem;
 }
 .back-text {
   color: var(--accent-30);
   font-family: var(--font-casual);
   padding: 0.25rem 1rem 0.25rem 1rem;
-  font-size: 1.25rem;
+  font-size: 1rem;
+}
+.back-text span {
+  color: var(--accent-70);
 }
 .title {
   font-family: var(--font-accent);
@@ -69,4 +124,50 @@ body {
 .reverse {
   padding: 1rem 3rem 1rem 1.5rem;
   direction: rtl;
+}
+
+/*  BACKGROUND LAYOUT  */
+.background {
+  height: 100%;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
+}
+.r-sec {
+  min-width: 67.5rem;
+  width: 67.5rem;
+  height: 100%;
+  background-image: linear-gradient(90deg, var(--primary-dark-50) 99.5%, transparent);
+}
+.l-sec {
+  flex: 100%;
+  height: 100%;
+}
+
+/*  TO TOP BUTTON  */
+.to-top {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  bottom: 2.2rem;
+  right: 2.5rem;
+  width: 3rem;
+  height: 3rem;
+  background-color: var(--secondary);
+  color: var(--primary);
+  transition: cubic-bezier(0.215, 0.61, 0.355, 1) 0.8s;
+}
+.to-top:hover {
+  background-color: var(--secondary-light);
+  cursor: pointer;
+  transition: cubic-bezier(0.215, 0.61, 0.355, 1) 0.8s;
+}
+.to-top:active {
+  background-color: var(--secondary-dark);
+}
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 700, 'GRAD' 0, 'opsz' 48;
+  transform: scale(1.25);
 }

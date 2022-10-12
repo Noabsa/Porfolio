@@ -1,104 +1,77 @@
-@import url('https://fonts.googleapis.com/css2?family=Albert+Sans&family=Patrick+Hand+SC&family=Amatic+SC&family=Montserrat+Alternates&family=Roboto&family=Urbanist:wght@300;400&display=swap');
-
-:root {
-  --primary: #1e1c21;
-  --primary-50: hsla(264, 8%, 12%, 0.5);
-
-  --primary-dark: #0a090b;
-  --primary-dark-50: hsla(270, 10%, 4%, 0.5);
-  --primary-dark-30: hsla(270, 10%, 4%, 0.3);
-
-  --primary-light: #888585;
-  --primary-light-50: hsla(0, 1%, 53%, 0.5);
-  --primary-light-20: hsla(0, 1%, 53%, 0.2);
-
-  --secondary: #64a2a6;
-  --secondary-50: hsla(184, 27%, 52%, 0.5);
-  --secondary-30: hsla(184, 27%, 52%, 0.3);
-  --secondary-20: hsla(184, 27%, 52%, 0.2);
-
-  --secondary-dark: hsl(190, 21%, 28%);
-  --secondary-dark-50: hsla(189, 21%, 32%, 0.5);
-  --secondary-dark-80: hsla(189, 21%, 32%, 0.8);
-
-  --secondary-light: #abc8c8;
-  --secondary-light-50: hsla(180, 21%, 73%, 0.5);
-  --secondary-light-40: hsla(180, 21%, 73%, 0.4);
-  --secondary-light-30: hsla(180, 21%, 73%, 0.3);
-
-  --accent: #c9b740;
-  --accent-50: hsla(52, 56%, 52%, 0.5);
-  --accent-20: hsla(52, 56%, 52%, 0.2);
-  --accent-30: hsla(52, 56%, 52%, 0.3);
-
-  --baseline: #f1ede9;
-  --baseline-70: hsla(30, 22%, 93%, 0.7);
-  --baseline-20: hsla(30, 22%, 93%, 0.2);
-
-  --Albert: 'Albert Sans', sans-serif;
-  --Amatic: 'Amatic SC', cursive;
-  --Montserrat: 'Montserrat Alternates', sans-serif;
-  --Roboto: 'Roboto', sans-serif;
-  --Urbanist: 'Urbanist', sans-serif;
-  --Patrick: 'Patrick Hand SC', cursive;
-
-  --font-primary: var(--Urbanist);
-  --font-accent: var(--Montserrat);
-  --font-casual: var(--Patrick);
-}
 /*  ABOUT ME - GRAPHIC  */
 
 .grid-graphic {
   height: 600px;
   width: 600px;
-  position: absolute;
-  right: 20rem;
-  top: 15rem;
-
+  min-height: 600px;
+  min-width: 600px;
   display: grid;
+  margin-top: 7rem;
+  margin-right: 2rem;
   grid-template-columns: repeat(6, 1fr);
   grid-template-rows: repeat(6, 1fr);
+  transform: scale(1.1);
 }
 .C1 {
   grid-area: 1 / 1 / 5 / 5;
-  background-color: var(--secondary-dark-80);
-  border-radius: 50%;
-  margin: -1rem;
+  margin: -1rem -2rem -1rem 0rem;
+  border-radius: 49.6%;
+  background: radial-gradient(circle at 13.41rem 13.46rem, transparent 69.7%, var(--secondary) 71%);
+  /*background-color: var(--secondary-dark-80);*/
 }
 .C2 {
   grid-area: 1 / 3 / 5 / 7;
-  background-color: var(--baseline-20);
-  border-radius: 50%;
-  margin: 1rem -1rem 1rem 3rem;
+  /*background-color: var(--baseline-20);*/
+  border-radius: 49.8%;
+  background: radial-gradient(circle at 11.55rem 11.51rem, transparent 69.8%, var(--baseline) 71%);
+  margin: 1rem 0rem 1rem 2rem;
+}
+.L1 {
+  transform: rotate(-18deg);
+  grid-area: 1 / 1 / 5 / 5;
+  margin: -1.2rem -1.7rem;
+  border-radius: 48%;
+  background: radial-gradient(circle at 13.3rem 13.5rem, transparent 69.7%, var(--secondary-light) 71%),
+    radial-gradient(circle at 12rem 13.5rem, transparent 70%, var(--secondary) 71%, transparent 74%);
+  margin: -1.5rem -2.5rem -0rem -0.2rem;
+}
+.L2 {
+  grid-area: 1 / 3 / 5 / 7;
+  border-radius: 48%;
+  background: radial-gradient(circle at 12.5rem 10.7rem, transparent 69.8%, var(--baseline-50) 71%, transparent 75%),
+    radial-gradient(circle at 15.91rem 9.53rem, transparent 75%, var(--baseline-70) 76%, transparent 77%);
+  margin: 1rem 2rem 1.5rem 2.5rem;
+}
+.LD {
+  grid-area: 3 / 2 / 5 / 7;
+  height: 13px;
+  transform: rotate(60deg);
+  background: linear-gradient(181deg, transparent 48%, var(--accent-50) 52%, transparent 60%),
+    linear-gradient(177.5deg, transparent 45%, var(--accent) 52%, transparent 59%),
+    linear-gradient(182.5deg, transparent 40%, var(--secondary) 52%, transparent 60%);
 }
 
 /*  SKILLS AND EXPERIENCE // PROJECTS // CONTACT  */
-.block {
-  display: block;
-  position: relative;
-}
 .block-expert,
 .block-projects,
 .block-maps {
-  position: absolute;
   display: flex;
   flex-direction: column;
-  height: 37rem;
-  top: 20rem;
-  right: 10rem;
-}
-.block-expert {
-  width: 21rem;
-}
-.block-projects,
-.block-maps {
+
   width: 40rem;
+  min-width: 40rem;
+  align-items: center;
+  height: 100%;
+}
+.block-projects {
   flex-direction: row;
   flex-wrap: wrap;
+  align-content: center;
 }
-.block-maps {
-  background-color: var(--secondary-30);
-}
+/*.block-expert div {
+  display: flex;
+  flex-direction: column;
+}*/
 .card {
   margin: 0.6rem 0.6rem 0.6rem 0.6rem;
   padding: 1.5rem;
@@ -108,26 +81,72 @@
   text-align: justify;
   font-family: var(--font-primary);
   flex: 30%;
+  /*height: 14rem;*/
   box-shadow: 5px 5px 10px 0px var(--primary-dark-30);
   border-top: var(--primary-light-20) solid 1px;
   border-left: var(--primary-light-20) solid 1px;
+  display: flex;
+  flex-direction: column;
+}
+.card.project {
+  height: 13rem;
+  padding: 1.2rem 0.5rem;
 }
 .accent {
   background-color: var(--accent-50);
 }
 .accent-2 {
-  background-color: var(--secondary-light-50);
+  background-color: var(--secondary-70);
 }
 h3 {
   color: var(--baseline-70);
   margin-bottom: 1rem;
   font-family: var(--font-accent);
+  font-size: 1.5rem;
 }
 h3.accent {
   color: var(--baseline);
   background-color: transparent;
 }
+h3.accent-2 {
+  color: var(--primary);
+  background-color: transparent;
+  font-weight: bolder;
+}
 p.accent {
   color: var(--baseline-70);
   background-color: transparent;
+}
+p.accent-2 {
+  color: var(--primary-dark);
+  background-color: transparent;
+}
+.icon-frame {
+  border: 0px solid var(--baseline);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: radial-gradient(circle at 50% 49%, transparent 69%, var(--baseline-50) 71%, transparent 73%),
+    radial-gradient(circle at 55% 47%, transparent 67%, var(--baseline-20) 69%, transparent 70%),
+    radial-gradient(circle at 48% 53%, transparent 69%, var(--baseline-20) 71%, transparent 72%);
+  padding: 1rem 0rem;
+}
+.icon-frame svg {
+  flex-basis: 100%;
+}
+.icon-frame svg {
+  width: 55%;
+  fill: var(--baseline);
+  fill-opacity: 0.4;
+}
+iframe {
+  width: 39rem;
+  height: 37rem;
+  min-height: 37rem;
+  border-radius: 0.5rem;
+  margin: 0.6rem 0.6rem 0.6rem 0.6rem;
 }
