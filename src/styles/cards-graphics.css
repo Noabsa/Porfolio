@@ -91,7 +91,18 @@
 .card.project {
   height: 13rem;
   padding: 1.2rem 0.5rem;
+  perspective: 1000px;
+  transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+  transition-duration: 1s;
+  backface-visibility: hidden;
 }
+.card.project:hover {
+  transform: rotateY(180deg);
+  transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+  transition-duration: 1s;
+  transform-style: preserve-3d;
+}
+
 .accent {
   background-color: var(--accent-50);
 }
