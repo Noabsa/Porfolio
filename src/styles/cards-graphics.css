@@ -11,6 +11,11 @@
   grid-template-columns: repeat(6, 1fr);
   grid-template-rows: repeat(6, 1fr);
   transform: scale(1.1);
+  transform: scale(1.1);
+  position: absolute;
+  right: 6rem;
+  top: 9rem;
+  opacity: 1;
 }
 .C1 {
   grid-area: 1 / 1 / 5 / 5;
@@ -57,7 +62,6 @@
 .block-maps {
   display: flex;
   flex-direction: column;
-
   width: 40rem;
   min-width: 40rem;
   align-items: center;
@@ -68,10 +72,6 @@
   flex-wrap: wrap;
   align-content: center;
 }
-/*.block-expert div {
-  display: flex;
-  flex-direction: column;
-}*/
 .card {
   margin: 0.6rem 0.6rem 0.6rem 0.6rem;
   padding: 1.5rem;
@@ -81,28 +81,51 @@
   text-align: justify;
   font-family: var(--font-primary);
   flex: 30%;
-  /*height: 14rem;*/
   box-shadow: 5px 5px 10px 0px var(--primary-dark-30);
   border-top: var(--primary-light-20) solid 1px;
   border-left: var(--primary-light-20) solid 1px;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.flip {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex: 33%;
+  position: relative;
 }
 .card.project {
   height: 13rem;
   padding: 1.2rem 0.5rem;
-  perspective: 1000px;
+  backface-visibility: hidden;
   transition: cubic-bezier(0.075, 0.82, 0.165, 1);
   transition-duration: 1s;
-  backface-visibility: hidden;
 }
-.card.project:hover {
+.flip:hover .card.project {
   transform: rotateY(180deg);
   transition: cubic-bezier(0.075, 0.82, 0.165, 1);
   transition-duration: 1s;
   transform-style: preserve-3d;
 }
-
+.card.info {
+  position: absolute;
+  height: 13rem;
+  width: calc(100% - 1.2rem);
+  transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+  transition-duration: 1.5s;
+  backface-visibility: visible;
+  transform: rotateY(180deg);
+  opacity: 0;
+}
+.flip:hover .card.info {
+  transform: rotateY(0deg);
+  transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+  transition-duration: 1.5s;
+  transform-style: preserve-3d;
+  opacity: 1;
+}
 .accent {
   background-color: var(--accent-50);
 }
@@ -132,6 +155,36 @@ p.accent-2 {
   color: var(--primary-dark);
   background-color: transparent;
 }
+.tag-group {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 0.7rem;
+}
+.tag {
+  padding: 0.1rem 0.6rem;
+  margin: 0.2rem 0.1rem;
+  border-radius: 5px;
+  border: var(--baseline-70) 1px solid;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--primary-dark);
+  background-color: var(--baseline-20);
+}
+.flip .card.info a.link {
+  font-size: bolder;
+  text-decoration: underline;
+  color: var(--baseline);
+  padding: 0.4rem;
+  margin-top: 0.4rem;
+  text-justify: center;
+  transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+  transition-duration: 1s;
+}
+.flip .card.info a.link:hover {
+  transform: scale(1.25);
+  transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+  transition-duration: 1s;
+}
 .icon-frame {
   border: 0px solid var(--baseline);
   display: flex;
@@ -160,4 +213,70 @@ iframe {
   min-height: 37rem;
   border-radius: 0.5rem;
   margin: 0.6rem 0.6rem 0.6rem 0.6rem;
+}
+
+@media (max-width: 1700px) {
+  .grid-graphic {
+    position: absolute;
+    opacity: 0.5;
+    transform: translateX(0rem) translateY(0rem) scale(1.1);
+  }
+  .block-expert,
+  .block-projects,
+  .block-maps {
+    margin-top: 7rem;
+  }
+}
+@media (max-width: 1600px) {
+  .grid-graphic {
+    opacity: 0.25;
+  }
+}
+@media (max-width: 1400px) {
+  .grid-graphic {
+    opacity: 0.1;
+  }
+}
+@media (max-width: 1100px) {
+  .block-expert,
+  .block-projects,
+  .block-maps {
+    width: 30rem;
+    min-width: 30rem;
+    max-width: 30rem;
+  }
+  .flip {
+    flex: 34%;
+  }
+  iframe {
+    width: 30rem;
+    height: 32rem;
+    min-height: 32rem;
+  }
+}
+@media (max-width: 850px) {
+  .grid-graphic {
+    transform: scale(0.8) translateY(-8rem);
+    right: 2rem;
+  }
+}
+@media (max-width: 800px) {
+  .grid-graphic {
+    transform: scale(0.6) translateY(-17rem);
+  }
+  .block-expert,
+  .block-projects,
+  .block-maps {
+    width: 25rem;
+    min-width: 25rem;
+    max-width: 25rem;
+  }
+  .flip {
+    flex: 100%;
+  }
+  iframe {
+    width: 25rem;
+    height: 27rem;
+    min-height: 27rem;
+  }
 }
