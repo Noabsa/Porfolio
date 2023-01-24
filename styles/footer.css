@@ -1,0 +1,29 @@
+.footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 14rem;
+  padding: 1.3rem 1rem 1rem 1rem;
+  background-color: transparent;
+  color: var(--baseline-70);
+  font-size: 1.2rem;
+  font-family: var(--font-primary);
+  box-shadow: 10px -5px 15px 0px var(--primary-dark-30);
+  margin-top: 10rem;
+}
+.footer .casual-text {
+  font-family: var(--font-accent);
+  font-weight: bolder;
+  font-size: 1.1rem;
+  padding: 0.5rem 0rem 0.5rem 0rem;
+}
+.footer .accent-text {
+  font-family: var(--font-accent);
+  font-size: 1.5rem;
+  color: var(--baseline);
+}
+.footer a {
+  font-size: 1.1rem;
+  color: var(--accent-70);
+}

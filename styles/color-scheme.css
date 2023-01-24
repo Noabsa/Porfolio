@@ -1,0 +1,38 @@
+:root {
+  --primary: #1e1c21;
+  --primary-50: hsla(264, 8%, 12%, 0.5);
+
+  --primary-dark: #0a090b;
+  --primary-dark-50: hsla(270, 10%, 4%, 0.5);
+  --primary-dark-30: hsla(270, 10%, 4%, 0.3);
+
+  --primary-light: #888585;
+  --primary-light-50: hsla(0, 1%, 53%, 0.5);
+
+  --secondary: #64a2a6;
+
+  --secondary-dark: hsl(190, 21%, 28%);
+  --secondary-dark-50: hsla(189, 21%, 32%, 0.5);
+  --secondary-dark-80: hsla(189, 21%, 32%, 0.8);
+
+  --secondary-light: #abc8c8;
+  --secondary-light-30: hsla(180, 21%, 73%, 0.3);
+
+  --accent: #c9b740;
+  --accent-50: hsla(52, 56%, 52%, 0.5);
+
+  --baseline: #f1ede9;
+  --baseline-70: hsla(30, 22%, 93%, 0.7);
+  --baseline-20: hsla(30, 22%, 93%, 0.2);
+
+  --Albert: 'Albert Sans', sans-serif;
+  --Amatic: 'Amatic SC', cursive;
+  --Montserrat: 'Montserrat Alternates', sans-serif;
+  --Roboto: 'Roboto', sans-serif;
+  --Urbanist: 'Urbanist', sans-serif;
+  --Patrick: 'Patrick Hand SC', cursive;
+
+  --font-primary: var(--Urbanist);
+  --font-accent: var(--Montserrat);
+  --font-casual: var(--Patrick);
+}
