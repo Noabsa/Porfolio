@@ -79,3 +79,8 @@ svg.logo {
     width: 450px;
   }
 }
+@media (max-width: 600px) {
+  .nav-bar .l-sec ul {
+    width: 300px;
+  }
+}

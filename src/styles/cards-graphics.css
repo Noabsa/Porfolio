@@ -280,3 +280,20 @@ iframe {
     min-height: 27rem;
   }
 }
+@media (max-width: 600px) {
+  .block-expert,
+  .block-projects,
+  .block-maps {
+    width: 15rem;
+    min-width: 15rem;
+    max-width: 15rem;
+  }
+  .grid-graphic {
+    transform: scale(0.6) translateY(-17rem) translateX(12rem);
+  }
+  iframe {
+    width: 17rem;
+    height: 19rem;
+    min-height: 19rem;
+  }
+}
